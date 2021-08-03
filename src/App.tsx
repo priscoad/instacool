@@ -8,6 +8,7 @@ import Login from './containers/Auth/Login';
 import Register from './containers/Auth/Register';
 import NewsFeed from './containers/NewsFeed';
 import Profile from './containers/Profile';
+import NewPost from './containers/Profile/NewPost';
 import services from './services';
 import { History } from 'history'
 
@@ -55,6 +56,7 @@ class App extends React.Component<IAppProps> {
         <Route path='/app' component={Navbar} />
         <Route exact={true} path='/app/newsfeed' component={NewsFeed} />
         <Route exact={true} path='/app/profile' component={Profile} />
+        <Route exact={true} path='/app/newpost' component={NewPost} />
       </div>
     );
   }

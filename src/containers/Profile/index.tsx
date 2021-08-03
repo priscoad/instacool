@@ -1,6 +1,7 @@
 import { chunk } from "lodash";
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { submit } from 'redux-form';
 import { ThunkDispatch } from "redux-thunk";
@@ -58,7 +59,9 @@ class Profile extends React.Component<IProfileProps> {
                         onSubmit={handleProfileImageSubmit}
                         submitProfileImg={submitProfileImg}
                     />
-                    <Button>Agregar</Button>
+                    <Link to='/app/newpost'>
+                        <Button>Agregar</Button>
+                    </Link>
                 </div>
                 {data.map((x, i) =>
                     <div key={i} style={style.row}>
@@ -94,6 +97,7 @@ const mapStateToProps = (state: IState) => {
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, any>) => bindActionCreators({
     ...postDuck,
+    ...usersDuck,
     submitProfileImg: () => submit('profileImg'),
 }, dispatch)
 
