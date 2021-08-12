@@ -7,6 +7,7 @@ import Title from '../../components/Title';
 import { ThunkDispatch } from 'redux-thunk';
 import { connect } from 'react-redux';
 import { IState } from '../../ducks';
+import PostImg from '../../components/PostImg';
 
 class NewPost extends React.Component {
     public render(){        
@@ -14,6 +15,7 @@ class NewPost extends React.Component {
             <Container center={true}>
                 <Card>
                     <Title>Agregar nuevo posts</Title>
+                    <PostImg />
                 </Card>
             </Container>
         )
